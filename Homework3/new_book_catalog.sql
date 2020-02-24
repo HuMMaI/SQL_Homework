@@ -99,5 +99,7 @@ SELECT * FROM book_catalog WHERE price NOT BETWEEN 10 AND 30;
 
 #Deleting books by some criteria
 DELETE FROM book_catalog WHERE id = 5;
-DELETE FROM book_catalog WHERE name = 'Little Boy Lost';
+SET sql_safe_updates = 0;
+DELETE FROM book_catalog WHERE title = 'Little Boy Lost';
 DELETE FROM book_catalog WHERE isbn = 9781967619543;
+SET sql_safe_updates = 1;
