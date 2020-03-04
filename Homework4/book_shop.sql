@@ -27,7 +27,7 @@ CREATE TABLE books(
     CONSTRAINT book_genre_FK FOREIGN KEY (genre_id) REFERENCES book_genres(id)
 );
 
-CREATE TABLE book_catalog(
+CREATE TABLE book_author_mapping(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     book_id INT NOT NULL,
     CONSTRAINT book_FK FOREIGN KEY (book_id) REFERENCES books(id),
@@ -50,5 +50,5 @@ INSERT INTO authors_info(name, surname, email, address, birth_date) VALUES
         ('Seanan', 'McGuire', 'mc.guire@gmail.com', '9014 Green Lane, London', '1986-08-02'),
         ('Emma', 'Copley', 'emma.copley@gmail.com', '44 The Green, London', '1982-02-10');
         
-INSERT INTO book_catalog(book_id, author_id) VALUES
+INSERT INTO book_author_mapping(book_id, author_id) VALUES
 	(1, 1), (1, 2), (2, 4), (3, 4), (4, 3), (4, 4);
